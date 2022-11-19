@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>타이머 함수</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+  
+            /* * 타이머 함수    
+            => 자동호출
+
+            1. 브라우저를 읽어올 때 지정한 시간 이후에 한 번만 실행되는 타이머 함수
+            setTimeout(function(){
+                내용
+            },시간);
+            clearTimeout(); -> setTimeout 함수 삭제 */
+
+
+            /* var st = setTimeout(function(){
+                document.write('지정한 시간 이후 한 번만 실행');        
+            },1000);
+
+            clearTimeout(st); */
+
+
+            /* 2. 브라우저를 읽어올 때 지정한 시간 이후 마다 계속 실행되는 타이머 함수
+            setInterval(function(){
+                내용
+            },시간);
+            clearInterval(); -> setInterval 함수 삭제 */
+
+
+            /* var sI = setInterval(function(){
+                document.write('지정한 시간 이후 계속 실행');
+            },1000); */
+
+            /* clearInterval(sI); */
+
+
+            /* 5초 뒤에 한 번만 실행되도록 */
+
+            /* setTimeout(function(){
+                clearInterval(sI);
+            },5000); */
+
+            /* $('#box').css({
+                width: 300,
+                height: 300,
+                backgroundColor: 'teal'
+            });
+
+            var i = 0;
+
+            $('#box').click(function(){
+
+                if(i == 0) {
+                    $(this).css({
+                        backgroundColor: 'salmon'
+                    });
+                    i++;
+                }else if(i == 1) {
+                    $(this).css({
+                        backgroundColor: 'teal'
+                    });
+                    i=0;
+                }
+            }); */
+
+            /* *.trigger()
+            => 사용자가 마치 이벤트를 실행하는 것처럼 이벤트를 강제로 실행
+            => $('선택자').trigger('명령'); */
+
+            /* var sI = setInterval(function(){
+                $('#box').trigger('click');
+            },1000);
+
+            setTimeout(function(){
+                clearInterval(sI);
+            },5000); */
+
+            
+
+        });
+    </script>
+</head>
+<body>
+    
+    <div id="box"></div>
+</body>
+</html>

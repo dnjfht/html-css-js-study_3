@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예제2</title>
+    <style>
+
+        * { margin:0; padding:0; }
+        ul { list-style:none; }
+
+        #wrap {
+            width:500px;
+            height:600px;
+            border:10px solid black;
+            margin:0 auto;
+            text-align:center;
+        }
+
+        #menu {
+            width:100%;
+            height:100px;
+            background-color:antiquewhite;
+        }
+
+        #menu>li {
+            width:25%;
+            height:100%;
+            float:left;
+            font:50px/100px '';
+        }
+
+        #box {
+            width:100%;
+            height:500px;
+            font:100px/500px '';
+
+            position:relative;
+        }
+
+        #box>li {
+            width:100%;
+            height:100%;
+
+            position:absolute;
+            top:0;
+            left:0;
+
+            display:none;
+        }
+
+        #box>li:nth-child(1) {
+            display:block;
+        }
+
+        li:nth-child(1) {
+            background-color:rgb(213,235,255);
+        }
+        
+        li:nth-child(2) {
+            background-color:rgb(162, 210, 255);
+        }
+
+        li:nth-child(3) {
+            background-color:rgb(124, 192, 255);
+        }
+
+        li:nth-child(4) {
+            background-color:rgb(56, 159, 255);
+        }
+
+
+    </style>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script>
+
+        $(document).ready(function(){
+
+            /* 문제
+            1. wrap안에 메뉴 4개 생성
+            2. 메뉴아래 박스 4개 생성
+            3. 각 메뉴 클릭했을 때 메뉴 순서에 맞게
+            박스 위에서 아래로 1초간 등장
+            ex) 메뉴 1번 클릭했을 때 1번 째 박스 등장,
+            2번 클릭했을 때 2번째 박스 나오고
+            1번 박스 위로 서서히 사라짐 */
+
+            $('#box>li').each(function(index){
+                $(this).attr('data-a', index);
+            });
+
+            $('#menu>li').each(function(index){
+                $(this).attr('data-a', index);
+            }).click(function(){
+
+                var i = $(this).attr('data-a');
+
+                $('#box>li[data-a!='+i+']').slideUp(1000);
+                $('#box>li[data-a='+i+']').show(1000);
+
+            });
+
+        });
+
+    </script>
+</head>
+<body>
+    
+    <div id="wrap">
+
+        <ul id="menu">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+
+        <ul id="box">
+            <li>첫번째</li>
+            <li>두번째</li>
+            <li>세번째</li>
+            <li>네번째</li>
+        </ul>
+
+    </div>
+    
+</body>
+</html>

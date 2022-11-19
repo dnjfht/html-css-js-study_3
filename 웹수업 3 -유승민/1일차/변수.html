@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변수</title>
+    <script>
+
+        /* * 자바스크립트
+        => HTML 문서에 사용되며 웹페이지에 동적인 효과 추가
+        => C언어를 바탕으로 두었음
+
+        * 제이쿼리
+        => 자바스크립트 라이브러리를 하나로 보다 쉽게
+        자바스크립트를 코딩할 수 있도록 많은 양의 코딩을 줄여주고
+        기능들을 구현한 함수들의 집합체
+        => HTML보다 깐깐함 */
+
+        /* * 변수
+        => 숫자, 문자와 같은 값들을 저장하는 공간
+        var 변수명=변수값; */
+
+        // var a = 10;
+        // var b = '화요일';
+
+       /*  => 문자는 따옴표 안에 적어야지만 출력이 됨 */
+
+        /* * 내 문서 body에 적어서 출력
+        => document.write(출력내용); */
+
+        /* document.write(a);
+        document.write(b);
+        document.write('a');
+        // => 변수명에 따옴표 지정시 문자로 인식해서 출력됨
+        document.write(20);
+        document.write("Let's"); */
+
+        // document.write(a + b);
+        // document.write(a + '<br/>' , b);
+
+        /* * 연결 연산자
+        => 문자와 문자 변수와 문자 숫자와 변수 등 연결해 줄 수 있는 것을 연결문산자라고 함
+        => + 혹은 ,(콤마 write문에만 사용 가능) */
+
+        /* * 문제
+        => 도큐먼트 명령어를 이용해서 h1태그 ~ h6태그 출력
+        => 내용은 웹퍼블리싱3 */
+
+        /* document.write('<h1>' , '웹퍼블리싱3');
+        document.write('<h2>' , '웹퍼블리싱3');
+        document.write('<h3>' , '웹퍼블리싱3');
+        document.write('<h4>' , '웹퍼블리싱3');
+        document.write('<h5>' , '웹퍼블리싱3');
+        document.write('<h6>' , '웹퍼블리싱3');
+        document.write('<h3>웹퍼블리싱3</h3>'); */
+
+        /* var a = '<h3>웹퍼블리싱3</h3>';
+        var b = '웹퍼블리싱3';
+        var c = '웹퍼블리싱';
+        var d = '3';
+        var e = '<h6>';
+        var f = '</h6>';
+
+        document.write(a);
+        document.write('<h2>' , a , '</h2>');
+        document.write('<h4>' , c , 3 + '</h4>');
+        document.write('<h5>' , c , d , '</h5>');
+        document.write(e , c , d , f); */
+
+        /* * 문제
+        변수를 이용해서 결과물이
+        a+b=3으로 나오게 작성 */
+
+        var a = 1;
+        var b = 2;
+        document.write('a+b=' , 3 , '<br/>');
+        document.write(a+b);
+
+        
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

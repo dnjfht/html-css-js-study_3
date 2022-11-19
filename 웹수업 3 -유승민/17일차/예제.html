@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예제</title>
+    <style>
+        
+        * { margin:0; padding:0; }
+
+        /* #box {
+            width:100%;
+            height:100vh;
+            background-color:gold;
+        } */
+
+    </style>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.transit.min.js"></script>
+    <script>
+
+        $(document).ready(function(){
+
+            /* * 문제
+            1. 박스 하나 만들고 크기는 브라우저 가득차게
+            2. 박스 클릭하면 x축으로 360도 회전하고 난 뒤 사라지게 작성 */
+            
+            var ww = $(window).width();
+            var wh = $(window).height();
+
+            function layout() {
+
+                $('#box').css({
+                width: ww,
+                height: wh,
+                backgroundColor: 'gold'
+            });
+
+            }//layout end
+            layout();
+
+
+            //resize
+            $(window).resize(function(){
+                ww = $(window).width();
+                wh = $(window).height();
+                layout();
+            });
+
+            $('#box').click(function(){
+                $('#box').transition({
+                    rotateY:360,
+                    /* opacity:0 */
+                },1000).fadeOut(1000);
+            });
+
+        });//end
+
+    </script>
+</head>
+<body>
+
+    <div id="box">
+        <h1>글자</h1>
+    </div>
+    
+</body>
+</html>

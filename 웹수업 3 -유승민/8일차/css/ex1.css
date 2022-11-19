@@ -1,0 +1,77 @@
+* {margin:0; padding:0; }
+a { text-decoration:none; color:black; }
+ul { list-style:none; }
+
+
+#wrap {
+    width:100%;
+}
+
+header {
+    width:100%;
+    height:100px;
+    background-color:lightgoldenrodyellow;
+    position:fixed;
+    top:0;
+    left:0;
+    padding: 25px 50px;
+    box-sizing: border-box;
+
+    font: 22px/50px '';
+    text-align: center;
+    display:flex;
+    justify-content:space-between;
+
+}
+
+#logo {
+    width:150px;
+    height:100%;
+    background-color:crimson;
+}
+
+#menu_wrap {
+    width:800px;
+    height:100%;
+    background-color:pink;
+}
+
+#menu_wrap>li {
+    width:25%;
+    height:100%;
+    float:left;
+}
+
+section {
+    background-color: tan;
+    display:flex;
+    justify-content:center;
+    /*item과 container 간에 수평방향으로 여백을 두는 방식을 지정
+    center : 수평으로 가운데 몰아서 배치*/
+    align-items:center;
+    /*수직방향으로 item과 container 간에 여백을 주는 방식을 지정
+    center : 수직으로 가운데 위치시킴*/
+    flex-direction: column;
+    /*container 안에서 item들의 정렬과 배치 방향을 지정하는 속성
+    row : 가로로 왼쪽에서 오른쪽으로 1,2,3
+    row-reverse : 가로로 오른쪽에서 왼쪽으로 1,2,3
+    column : 세로로 위에서 아래로 1,2,3
+    column-reverse : 세로로 아래에서 위로 1,2,3*/
+}
+
+h1 {
+    font-size:60px;
+    margin-bottom:15px;
+
+    position:relative;
+    top:100px;
+    opacity:0;
+}
+
+p {
+    font-size:20px;
+
+    position:relative;
+    left:-300px;
+    opacity:0;
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예제1</title>
+    <style>
+
+        * { margin: 0; padding: 0; }
+        ul { list-style: none;; }
+        
+        #box { 
+            width: 1000px;
+            height: 200px;
+            border: 10px solid black;
+            margin: 100px auto;
+        }
+
+        #box>li {
+            width: 200px;
+            height: 200px;
+            font: 100px/200px '';
+            text-align: center;
+            float: left;
+        }
+
+    </style>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+
+        $(document).ready(function(){
+
+            /* 문제1
+            첫 번째 li를 1초마다 부모 안에서 뒤로 보내기 */
+
+            $('#box>li').eq(0).css({
+                backgroundColor: 'salmon'
+            });
+            $('#box>li').eq(1).css({
+                backgroundColor: 'gold'
+            });
+            $('#box>li').eq(2).css({
+                backgroundColor: 'darkgreen'
+            });
+            $('#box>li').eq(3).css({
+                backgroundColor: 'lightblue'
+            });
+            $('#box>li').eq(4).css({
+                backgroundColor: 'tan'
+            });
+
+            var sI = setInterval(function(){
+                $('#box>li:first').appendTo('#box');
+            },1000);
+            //전역변수
+
+
+
+            /* 문제2
+            box에 마우스 올리면 멈추고 내렸을 때 다시 재생되게 작업 */
+
+            $('#box').hover(function(){
+                clearInterval(sI);
+            },function(){
+                sI = setInterval(function(){
+                    $('#box>li:first').appendTo('#box');
+                },1000);
+                //지역변수(함수 안에 변수를 선언할 때)
+            });
+
+            /* * 변수
+            1. 전역변수
+            => 내 문서 전체에서 사용 가능한 변수
+            함수영역이 아닌 상태에서 var 변수 선언 => 전역 변수
+
+            2. 지역변수
+            => 함수 내부에서만 사용 가능한 변수
+            함수영역 안에서 var 변수 선언 => 지역변수
+            함수영역 안에서 전역변수로 지정할 때
+            var 없이 변수 선언 => 전역변수 */
+
+        });//end
+    </script>
+</head>
+<body>
+    
+    <ul id="box">
+        <li>1</li>
+        <li>2</li>
+        <li><a href="#">3</a></li>
+        <li>4</li>
+        <li><a href="#">5</a></li>
+    </ul>
+</body>
+</html>

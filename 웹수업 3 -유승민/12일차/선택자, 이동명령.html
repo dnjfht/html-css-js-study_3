@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택자, 이동명령</title>
+    <style>
+
+        * { margin:0; padding:0; }
+        ul { list-style:none; }
+
+        #box { 
+            width: 1000px;
+            height: 200px;
+            border: 10px solid black;
+            margin: 100px auto;
+        }
+
+        #box>li {
+            width: 200px;
+            height: 200px;
+            font: 100px/200px '';
+            text-align: center;
+            float: left;
+        }
+
+
+    </style>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+
+        $(document).ready(function(){
+
+            /* * 선택자
+            css에서 nth-child(순서)
+            = jquery에서 .eq(index) index 순서값으로 선택가능 (index 0부터 시작) */
+
+
+            //첫 번째
+            /* $('li:first').css({
+                backgroundColor: 'teal'
+            }); */
+
+            /* $('li').first().css({
+                backgroundColor: 'salmon'
+            }); */
+
+            /* $('li').eq(0).css({
+                backgroundColor: 'gold'
+            }); */
+
+
+
+            //마지막
+            /* $('li:last').css({
+                backgroundColor: 'lightblue'
+            }); */
+
+            /* $('li').last().css({
+                backgroundColor: 'lightgreen'
+            }); */
+
+            /* $('li').eq(4).css({
+                backgroundColor: 'coral'
+            }); */
+
+
+
+            //자식, 자손 선택자
+
+            /* $('#box>li:nth-child(3)>a').css({
+                color: 'crimson'
+            }); */
+
+            //자손은 여러 개를 선택하여 스타일을 지정할 때 사용할 수 있음
+
+            /* $('#box a').css({
+                color: 'darkgreen'
+            }); */
+
+            
+
+            //이벤트
+            /* $('#box').click(function(){
+
+                $('#box a').css({
+                    color: 'lightgray'
+                });
+
+                // 모든 a가 선택되는 것이 아니라, 선택한 박스 안의 a만 이벤트가 적용됨
+
+                $('a', this).css({
+                    color: 'lightyellow'
+                });
+
+            }); */
+
+
+            //find
+
+            /* $('#box').find('a').css({
+                color: 'mediumslateblue'
+            }); */
+
+            /* => 부모 안쪽에 원하는 자식선택자를 찾아서 잡아줌
+            => 최초 선택자 안쪽으로 원하는 자식을 선택할 수 있음
+            => find 안쪽으로 넣는 선택자는 알아서 찾아 선택함 */
+
+            $('#box>li').eq(0).css({
+                backgroundColor: 'salmon'
+            });
+            $('#box>li').eq(1).css({
+                backgroundColor: 'gold'
+            });
+            $('#box>li').eq(2).css({
+                backgroundColor: 'darkgreen'
+            });
+            $('#box>li').eq(3).css({
+                backgroundColor: 'lightblue'
+            });
+            $('#box>li').eq(4).css({
+                backgroundColor: 'tan'
+            });
+
+            /* * 이동명령
+            1. $(선택자1).appendTo(선택자2);
+            선택자1(자식) 선택자2(부모)
+            => 선택자 1을 선택자 2번 안에서 뒤쪽 이동
+
+            2. $(선택자1).prependTo(선택자2);
+            => 선택자 1을 선택자 2번 안에서 앞쪽 이동 */
+
+            /* $('#box>li').first().appendTo('#box'); */
+
+            /* $('#box').find('li').prependTo('#box'); */
+
+            /* 3. $(선택자1).insertBefore(선택자2)
+            => 선택자 1을 선택자 2번 밖애서 앞쪽 이동
+
+            4. $(선택자1).insertAfter(선택자2)
+            => 선택자 1을 선택자 2번 밖애서 뒤쪽 이동 */
+
+            /* $('#box>li:nth-child(2)').insertBefore('#box'); */
+
+            /* $('#box>li').eq(2).insertAfter('#box'); */
+
+
+
+        });//end
+    </script>
+</head>
+<body>
+    
+    <ul id="box">
+        <li>1</li>
+        <li>2</li>
+        <li>
+            <a href="#">3</a>
+        </li>
+        <li>
+            <a href="#">4</a>
+        </li>
+        <li>5</li>
+    </ul>
+</body>
+</html>

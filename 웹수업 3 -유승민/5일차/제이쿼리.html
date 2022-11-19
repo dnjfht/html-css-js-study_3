@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리</title>
+    <style>
+
+        * { margin:0; padding:0; }
+
+        /* #box {
+            width:400px;
+            height:400px;
+            background-color:gold;
+        } */
+
+
+
+    </style>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+
+        /* * 제이쿼리
+        => 자바스크립트에서 여러 명령을 함수화시켜 만들어진 함수의 라이브러리 형태의 언어
+        => 선택자.명령();
+
+        * 제이쿼리 적용 위치
+        => style을 먼저 읽고 난 다음에 제이쿼리 라이브러리 순서대로 연결
+        => 제이쿼리 라이브러리 다운 (구글에 jquery 검색 후 다운)
+
+        * 제이쿼리 연결
+        => 외부 스크립트 파일을 연결한 스크립트 태그 내부에는 어떤 내용이든 삽입 안함
+        => 반드시 제이쿼리 라이브러리가 스크립트 최 상단에 있어야 함 */
+
+        $(document).ready(function(){
+
+            /* * 제이쿼리 기본툴
+            $(document).ready(function(){});
+            => 제이쿼리를 사용할 땐 기본틀 밖을 벗어나면 안됨
+            => 자바스크립트의 함수 형태를 간단한 명령으로 호출하여 사용 */
+
+            /* $(선택지).명령(형태);
+            1. 이벤트형태 function(){}
+            2. 속성형태 {}
+            3. 단순 명령, 시간 */
+
+            /* * 제이쿼리 표기
+            1. - 자동인식 안함 => "문자로 인식"
+            => - (하이픈) 이어지는 영어 대문자로 작성
+                font-size => fontSize
+
+            2. 선택자
+            => 기본 css 선택자 모두 활용 가능
+            => 따옴표 삽입하는 선택자 : 기존 css 선택자(작업자 삽입한 선택자)
+            => document/ window / this 만들어져 있는 선택자라 따옴표 넣을 필요 없음
+            => 태그 선택 => $('태그선택자').명령();
+            => 아이디어 선택 => $('#아이디어명').명령();
+            => 클래스선택 => $('.클래스명').명령();
+            => 구조선택 => $('선택자:nth-child(순서)').명령();
+            =>$(window).명령(); */
+
+            /* * .css();
+            => 스타일 속성을 활용할 수 있게 하는 명령
+            => 형태
+            $(선택자).css({
+                속성:속성값;
+                속성:속성값....
+            }); */
+
+
+            /* $('#box').css({
+                width:300+'px', // '300px'
+                height:300+'px',
+                backgroundColor:'teal'
+            }); */
+
+
+            /* * 문제
+            => div 박스 2개 생성(부모 안에 자식)
+            => 부모 박스 크기 400*400, 노란색, 왼쪽정렬
+            => 자식 박스 크기 300*300 가운데 위치 빨간색 */
+
+            /* $('#out_box').css({
+                width:'400px',
+                height:'400px',
+                backgroundColor:'gold',
+                float:'left'
+            });
+
+            $('#in_box').css({
+                width:'300px',
+                height:'300px',
+                backgroundColor:'crimson',
+                margin:'50px auto'
+            }); */
+
+            /* * 문제2
+            div의 스타일 (3개)
+            => 가로 400px
+            => 세로 400px
+            => 텍스트 크기 100px
+            => 텍스트 가로세로 중앙정렬
+            => 배경색 (빨강, 초록, 파랑 id값, class값은 지정 안함) */
+
+            $('div').css({
+                width:'400px',
+                height:'400px',
+                fontSize:'100px',
+                textAlign:'center',
+                lineHeight:'400px',
+            });
+
+            $('div:nth-child(1)').css({
+                backgroundColor: 'crimson'
+            });
+
+            $('div:nth-child(2)').css({
+                backgroundColor: 'darkgreen'
+            });
+
+            $('div:nth-child(3)').css({
+                backgroundColor: 'darkblue'
+            });
+
+            /* * 문제3
+            => div 가로값, 세로값 변수로 저장
+            => h1태그에 css로 변수로 저장한 가로, 세로값 지정
+            => h1 총 가로길이 800, 세로길이 300
+            => h1태그에 배경색 노랑 */
+
+            /* * 선택자 크기 변수로 담을때
+            => var a = $("가로값으로가져올 선택자").width();
+            => var b = $("세로값으로가져올 선택자").height(); */
+
+            /* var div_w = $('div').width();
+            var div_h = $('div').height();
+
+            $('h1').css({
+                width:div_w + 400,
+                height:div_h - 100,
+                backgroundColor:'gold'
+            }); */
+
+            var div_w = $('div').width();
+            var div_h = $('div').height();
+
+            $('h1').css({
+               width:div_w + 400,
+               height:div_h - 100,
+               backgroundColor:'gold' 
+            });
+
+        }); //end
+
+    </script>
+
+</head>
+<body>
+    
+    <!-- <div id="box"></div>
+
+    <div id="out_box">
+        <div id="in_box"></div>
+    </div> -->
+
+    <!-- <div></div>
+    <div></div>
+    <div></div> -->
+
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <h1>4</h1>
+
+</body>
+</html>

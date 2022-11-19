@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>트랜지션</title>
+    <style>
+
+        * { margin:0; padding:0; }
+        
+        .box {
+            width:400px;
+            height:100px;
+            border:10px solid black;
+            margin:100px auto;
+        }
+
+        #css_box {
+            transition-duration:1s;
+        }
+
+        #css_box:hover {
+            transform:rotateY(360deg);
+        }
+
+    </style>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.transit.min.js"></script>
+    <script>
+        
+        $(document).ready(function(){
+
+            /* * 제이쿼리 트랜지션 플러그인
+            jquery transit 검색 후 다운받고 연결
+            => transition 명령 사용 가능
+            => $('선택자').transition({
+                translate: 'x px, y px' <- 따로 적용 가능,
+                sclaeX: ,
+                scaleY: ,
+                rotate: <- z축 회전,
+                rotateX: ,
+                rotateY: ,
+                skewX: ,
+                skewY: ,
+                delay: ,
+                opacity: ,
+                backgroundColor: ,
+            },시간, 가속도, 콜백함수); -> 애니메이션 기능 (animate와 동일하게 사용 가능) */
+
+            $('#js_box').transition({
+                rotateY: 180
+            },1000,function(){
+                $(this).transition({
+                    translate: '100px, 100px'
+                },1500,function(){
+                    $(this).transition({
+                        scaleX: 1.5,
+                        skewY: 30
+                    },2000,function(){
+                        $(this).transition({
+                            delay: 1,
+                            opacity: 0.5,
+                            backgroundColor: 'teal'
+                        },1200,function(){
+                            $(this).transition({
+                                backgroundColor: 'white',
+                                opacity: 1,
+                                skewY: 0,
+                                skewX: 1,
+                                translate: '0px, 0px',
+                                rotateY: 0
+                            },200);
+                        });
+                    });
+                });
+            });
+
+        });//end
+
+    </script>
+</head>
+
+<body>
+    
+    <div class="box" id="css_box"></div>
+    <div class="box" id="js_box"></div>
+
+</body>
+</html>

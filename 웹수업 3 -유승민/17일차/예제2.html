@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예제2</title>
+    <style>
+        
+        * { margin:0; padding:0; }
+
+        #wrap {
+            width:400px;
+            height:600px;
+            border:10px solid black;
+            margin:0 auto;
+
+            position:relative;
+        }
+
+        .box {
+            width:100%;
+            height:100%;
+            font:900 150px/600px '';
+            text-align:center;
+
+            position:absolute;
+            top:0;
+            left:0;
+        }
+
+        #back {
+            background-color:chartreuse;
+            transform:rotateY(180deg);
+            opacity:0;
+        }
+
+        #front {
+            background-color:coral;
+        }
+
+        
+
+    </style>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.transit.min.js"></script>
+    <script>
+
+        $(document).ready(function(){
+
+            var i = 0;
+
+            $('#wrap').click(function(){
+        
+                if(i == 0) {
+                    $('#front').transition({
+                        rotateY:180,
+                        opacity:0
+                    },1000);
+                    $('#back').transition({
+                        rotateY:0,
+                        opacity:1
+                    },1000);
+                    i++;
+                }else if(i == 1) {
+                    $('#front').transition({
+                        rotateY:0,
+                        opacity:1
+                    },1000);
+                    $('#back').transition({
+                        rotateY:180,
+                        opacity:0
+                    },1000);
+                    i=0;
+                }
+
+
+                });
+            
+        });//end
+
+    </script>
+</head>
+<body>
+
+    <div id="wrap">
+        <div class="box" id="back">뒤</div>
+        <div class="box" id="front">앞</div>
+    </div>
+
+   </div>
+    
+</body>
+</html>

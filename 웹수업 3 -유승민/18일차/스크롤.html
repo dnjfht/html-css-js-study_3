@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스크롤</title>
+    <style>
+
+        * { margin:0; padding:0; }
+
+        body {
+            height:15000px;
+        }
+
+        #wrap {
+            width:100%;
+        }
+
+        div {
+            width:100%;
+            font-size:30px;
+            text-align:center;
+        }
+
+        #btn {
+            height:100px;
+            background-color:tan;
+        }
+
+        #box_1 {
+            height:500px;
+            background-color:rgb(0,161,255);
+        }
+
+        #box_2 {
+            height:200px;
+            background-color:lightsalmon;
+        }
+        
+
+    </style>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>   
+    <script>
+
+        $(document).ready(function(){
+
+            /* * 스크롤
+            => 스크롤 초기 위치값은 스크롤 제일 최상단 부분이 0
+            => scrollTop 값을 이용해서 위치를 변경하려면
+            html 값을 움직여야 됨 */
+
+            /* $('#btn').click(function(){
+                $('html').animate({
+                    scrollTop:600
+                });
+            }); */
+
+            /* * 스크롤 이벤트
+            => $(window).scroll(function((){});
+            => 스크롤이 움직일 때(마우스 휠로 스크롤 위치값을 변경할 때)
+            스크롤 이벤트를 활용하여 태그의 움직임을 줄 수 있음
+            => 변수=$(window).scrollTop(); 작성시 스크롤탑 위치값을 가져올 수 있음 */
+
+            $(window).scroll(function(){
+
+                sct = $(window).scrollTop();
+                console.log(sct);
+
+                if(sct > 0 && sct < 600) {
+                    $('#box_2').css({
+                        backgroundColor:'teal'
+                    });
+                }else if(sct >= 600) {
+                    $('#box_2').css({
+                        backgroundColor: 'gold'
+                    });
+                }else {
+                    $('#box_2').css({
+                        backgroundColor:'lightsalmon'
+                    });
+                }
+
+            });
+
+
+        });//end
+
+    </script>
+</head>
+
+<body>
+    
+    <div id="wrap">
+    
+        <div id="btn">버튼</div>
+        <div id="box_1"></div>
+        <div id="box_2"></div>
+
+    </div>
+
+</body>
+</html>

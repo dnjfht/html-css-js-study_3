@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예제2</title>
+    <style>
+
+        * { margin: 0; padding: 0; }
+
+        img { display: block; border: 0; }
+
+        #wrap {
+            width:800px;
+            height: 300px;
+            border: 10px solid black;
+            margin: 200px auto;
+            position:relative;
+            overflow:hidden;
+        }
+
+        #img_wrap {
+            width: 800px;
+            height: 900px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        #img_wrap>img {
+            width: 100%;
+            height: 300px;
+        }
+
+        .btn {
+            width: 150px;
+            height: 50px;
+            background-color:bisque;
+            position:absolute;
+            left:50%;
+            margin-left:-75px;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #bottom {
+            bottom:0;
+        }
+
+        #top {
+            top:0;
+        }
+
+    </style>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+
+        $(document).ready(function(){
+            
+            /* 문제
+            1. wrap : 800*300
+            2. 이미지 갯수 : 3개
+            3. 이미지 슬라이드 위아래로 반복되도록 작성 (버튼 클릭시)
+            4. 아래 버튼을 클릭했을 때 1초마다 슬라이드가 움직이도록 작성
+            5. 5초 뒤에 멈추게 */
+            
+            var i = 0;
+
+
+            $('#bottom').click(function(){
+
+                //이미지가 세 개이므로 i가 2보다 커지면 0으로 돌아가도록
+                i++;
+                if(i > 2) {
+                    i = 0;
+                    //0,1,2,0,1,2...
+                }
+                $('#img_wrap').animate({
+                    top: -300 * i
+                });
+            });
+
+            $('#top').click(function(){
+
+                //이미지가 세 개이므로 i가 0보다 작아지면 2로 돌아가도록
+                i--;
+                if(i < 0) {
+                    i = 2;
+                    //0,2,1,0,2,1...
+                }
+                $('#img_wrap').animate({
+                    top: -300 * i
+                });
+            });
+
+            var sI = setInterval(function(){
+                $('#bottom').trigger('click');
+            },1000);
+
+            setTimeout(function(){
+                clearInterval(sI);
+            },5000);
+
+        });
+    </script>
+</head>
+<body>
+    
+    <div id="wrap">
+        <div id="img_wrap">
+            <img src="/img/b.jpg" alt="">
+            <img src="/img/c.jpg" alt="">
+            <img src="/img/d.jpg" alt="">
+        </div>
+
+        <div class="btn" id="top">^</div>
+        <div class="btn" id="bottom">v</div>
+    </div>
+</body>
+</html>

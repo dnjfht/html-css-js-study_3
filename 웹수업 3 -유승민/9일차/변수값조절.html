@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변수값 조절</title>
+    <style>
+
+        * { margin:0; padding:0; }
+
+    </style>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            
+            $('#box').css({
+                width:300,
+                height:300,
+                backgroundColor:'salmon'
+            });
+
+            var i = 0;
+            $('#box').click(function(){
+                
+                if(i == 0) {
+                    $(this).css({
+                        backgroundColor: 'teal'
+                    });
+                    i++;
+                }else if(i == 1) {
+                    $(this).css({
+                        backgroundColor: 'salmon'
+                    });
+                    i=0;
+                }
+
+                console.log(i);
+
+            });
+            
+            /* var i = 0;
+            $('#box').click(function(){
+            
+                if(i == 0) {
+                    $(this).css({
+                        backgroundColor: 'teal'
+                    }).animate({
+                        width:500
+                    });
+                    i++;
+                }else if(i == 1) {
+                    $(this).css({
+                        backgroundColor: 'gold'
+                    }).animate({
+                        height: 500
+                    });
+                    i++;
+                }else if(i == 2) {
+                    $(this).css({
+                        backgroundColor: 'yellow'
+                    }).animate({
+                        width:300,
+                        height:300
+                    });
+                    i=0;
+                }
+
+                console.log(i);
+            }); */
+        });
+    </script>
+</head>
+<body>
+    
+    <div id="box"></div>
+
+</body>
+</html>

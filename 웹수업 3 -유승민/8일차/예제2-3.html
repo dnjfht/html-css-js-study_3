@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예제2</title>
+    <style>
+
+        * { margin:0; padding:0; }
+        ul { list-style:none; }
+        a { color:#222; text-decoration:none; }
+        img { display:block; border:0; }
+
+        #text_wrap {
+            width:100%;
+        }
+
+        #text_wrap>h2 {
+            width:100%;
+
+            font-size:65px;
+
+            position:relative;
+        }
+
+        #text_wrap>p {
+            width:100%;
+            margin:40px 0;
+
+            font-size:23px;
+            line-height:35px;
+            
+            position:relative;
+        }
+
+        /* 공통영역 */
+
+        #wrap {
+            width:100%;
+        }
+
+        header {
+            width:100%;
+            height:100px;
+            background-color:gold;
+
+            position:fixed;
+            top:0;
+            left:0;
+
+            z-index:999;
+        }
+
+        #in_header {
+            width:1500px;
+            height:100%;
+            margin:0 auto;
+            padding:30px;
+            box-sizing:border-box;
+        }
+
+        #logo {
+            width:150px;
+            height:40px;
+            background-color:rgb(255, 179, 0);
+
+            text-align:center;
+
+            float:left;
+        }
+
+        #logo>a {
+            font-size:18px;
+            font-weight:700;
+            line-height:40px;
+        }
+
+        #menu_wrap {
+            width:850px;
+            height:100%;
+            background-color:rgb(255, 179, 0);
+
+            float:right;
+        }
+
+        #menu_wrap>li {
+            width:25%;
+            height:100%;
+
+            float:left;
+
+            text-align:center;
+
+            transition-duration:0.5s;
+        }
+
+        #menu_wrap>li:hover {
+            background-color:rgb(255, 157, 0);
+        }
+
+        #menu_wrap>li>a {
+            font-size:16px;
+            line-height:40px;
+            font-weight:300;
+        }
+
+        #sub_menu {
+            width:100%;
+            height:0;
+            background-color:rgb(255, 247, 0);
+
+            overflow:hidden;
+        }
+
+        #sub_menu>li {
+            width:100%;
+            height:60px;
+
+            float:left;
+        }
+
+        #sub_menu>li:hover {
+            background-color:rgb(255, 208, 0);
+        }
+
+        #sub_menu>li>a {
+            font-size:15px;
+            line-height:60px;
+            font-weight:300;
+        }
+
+        /* header end */
+
+        #section_1 {
+            width:100%;
+            height:800px;
+            background-color:rgb(255, 191, 0);
+
+            text-align:right;
+        }
+
+        #section_1 > #text_wrap {
+            transform: translateY(300px);
+    
+            position: relative;
+            right: 150px;
+        }
+
+        #section_1 h2 {
+            right:150px;
+            top:60px;
+
+            opacity:0;
+        }
+
+        #section_1 p {
+            right:150px;
+            top:20px;
+
+            opacity:0;
+        }
+
+        #section_1 h1 {
+            font-size: 160px;
+            line-height: 130px;
+            color: rgba(0,0,0,0.1);
+
+            position: relative;
+            left: -100px;
+
+            opacity: 0;
+        }
+
+        /* section_1 end */
+
+        #section_2 {
+            width:100%;
+            height:600px;
+            background-color:rgb(202, 149, 69);
+
+            text-align:left;
+        }
+
+        #section_2 > #text_wrap {
+            transform:translateY(170px);
+        }
+
+        #section_2 h2 {
+            top:40px;
+
+            opacity:0;
+        }
+
+        #section_2 p {
+            top:50px;
+
+            opacity:0;
+        }
+
+        #btn {
+            width: 150px;
+            height: 60px;
+            background-color: rgba(144, 94, 24, 0.919);
+            border-radius: 30px;
+    
+            font: 18px/60px '';
+            text-align: center;
+
+            position: relative;
+            top: 40px;
+
+            opacity: 0;
+        }
+
+    </style>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+
+        $(document).ready(function(){
+        
+            $('#menu_wrap>li:nth-child(1)').hover(function(){
+
+                $('#menu_wrap>li:nth-child(1) #sub_menu').stop().animate({
+                    height:240
+                },500);
+
+            },function(){
+                
+                $('#menu_wrap>li:nth-child(1) #sub_menu').stop().animate({
+                    height:0
+                },500);
+
+            });
+
+            $('#menu_wrap>li:nth-child(2)').hover(function(){
+
+                $('#menu_wrap>li:nth-child(2) #sub_menu').stop().animate({
+                    height:240
+                },500);
+
+            },function(){
+
+                $('#menu_wrap>li:nth-child(2) #sub_menu').stop().animate({
+                    height:0
+                },500);
+
+            });
+
+            $('#menu_wrap>li:nth-child(3)').hover(function(){
+
+                $('#menu_wrap>li:nth-child(3) #sub_menu').stop().animate({
+                    height:240
+                },500);
+
+            },function(){
+
+                $('#menu_wrap>li:nth-child(3) #sub_menu').stop().animate({
+                    height:0
+                 },500);
+
+            });
+
+            $('#menu_wrap>li:nth-child(4)').hover(function(){
+
+                $('#menu_wrap>li:nth-child(4) #sub_menu').stop().animate({
+                    height:240
+                },500);
+
+            },function(){
+
+                $('#menu_wrap>li:nth-child(4) #sub_menu').stop().animate({
+                    height:0
+                },500);
+
+            });
+
+
+            //#section_1
+
+            $('#section_1 h2').animate({
+                top:0,
+
+                opacity:1
+            },500);
+
+            $('#section_1 p').delay(200).animate({
+                top:0,
+
+                opacity:1
+            },500);
+
+            $('#section_1 h1').delay(200).animate({
+                left:0,
+
+                opacity:1
+            },500);
+
+
+            //section_2
+
+            $('#section_2').mouseenter(function(){
+
+                $('#section_2 h2').animate({
+                    top:0,
+
+                    opacity:1
+                },500);
+
+                $('#section_2 p').delay(200).animate({
+                    top:0,
+
+                    opacity:1
+                },500);
+
+                $('#section_2 #btn').delay(200).animate({
+                    top:0,
+
+                    opacity:1
+                },500);
+
+            });
+
+
+            $('#section_2').mouseleave(function(){
+
+                $('#section_2 h2').animate({
+                    top:40,
+
+                    opacity:0
+                },500);
+
+                $('#section_2 p').delay(200).animate({
+                    top:50,
+
+                    opacity:0
+                },500);
+
+                $('#section_2 #btn').delay(200).animate({
+                    top:40,
+
+                    opacity:0
+                },500);
+
+            });
+
+        });
+
+    </script>
+</head>
+
+<body>
+    
+    <div id="wrap">
+
+        <header>
+
+            <div id="in_header">
+
+                <div id="logo">
+   
+                    <a href="#">
+                        logo
+                    </a>
+
+                </div>
+                <!-- logo end -->
+
+                <ul id="menu_wrap">
+
+                    <li>
+                        <a href="#">menu</a>
+
+                        <ul id="sub_menu">
+ 
+                            <li><a href="#">sub</a></li>
+                            <li><a href="#">sub</a></li>
+                            <li><a href="#">sub</a></li>
+                            <li><a href="#">sub</a></li>
+
+                        </ul>
+                        <!-- sub_menu end -->
+
+                    </li>
+
+                    <li><a href="#">menu</a>
+
+                        <ul id="sub_menu">
+ 
+                            <li><a href="#">sub</a></li>
+                            <li><a href="#">sub</a></li>
+                            <li><a href="#">sub</a></li>
+                            <li><a href="#">sub</a></li>
+                            
+                        </ul>
+                        <!-- sub_menu end -->
+
+                    </li>
+
+                    <li><a href="#">menu</a>
+
+                        <ul id="sub_menu">
+ 
+                            <li><a href="#">sub</a></li>
+                            <li><a href="#">sub</a></li>
+                            <li><a href="#">sub</a></li>
+                            <li><a href="#">sub</a></li>
+                            
+                        </ul>
+                        <!-- sub_menu end -->
+
+                    </li>
+
+                    <li><a href="#">menu</a>
+
+                        <ul id="sub_menu">
+ 
+                            <li><a href="#">sub</a></li>
+                            <li><a href="#">sub</a></li>
+                            <li><a href="#">sub</a></li>
+                            <li><a href="#">sub</a></li>
+                            
+                        </ul>
+                        <!-- sub_menu end -->
+
+                    </li>
+
+                </ul>
+                <!-- menu_wrap end -->
+
+            </div>
+            <!-- in_header end -->
+
+        </header>
+        <!-- header end -->
+
+        <section id="section_1">
+
+            <div id="text_wrap">
+
+                <h2>카카오페이증권</h2>
+                <p>플랫폼을 통한 새로운 투자문화를 만듭니다.</p>
+                <h1>KAKAOPAY<br/>
+                    SECURITIES</h1>
+
+            </div>
+            <!-- text_wrap end -->
+
+        </section>
+        <!-- section_1 end -->
+
+        <section id="section_2">
+
+            <div id="text_wrap">
+
+                <h2>마음 놓고 투자하다</h2>
+                <p>누구든지 정보나 자산 규모에 따른 차별 없이<br/>
+                    편리하고 안전하게 자산을 관리할 수 있도록<br/>
+                    플랫폼을 통한 새로운 투자 문화를 만들어 갑니다.</p>
+                <div id="btn">회사소개</div>
+    
+            </div>
+            <!-- text_wrap end -->
+
+        </section>
+        <!-- section_2 end -->
+
+    </div>
+    <!-- wrap end -->
+
+</body>
+</html>

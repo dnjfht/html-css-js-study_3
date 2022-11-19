@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예제</title>
+    <style>
+
+        * { margin:0; padding:0; }
+        a { text-decoration:none; color:black; }
+        ul { list-style:none; }
+
+    </style>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+
+        $(document).ready(function(){
+            
+            /* * 문제1
+            1. wrap 크기 : ww * wh
+            2. header 크기 : 100% * 100px 위치값 고정
+            3. 섹션1 크기 : ww * wh
+            4. 섹션1 안쪽 타이틀과 문단 만들고
+            화면 세로고침시 애니메이트로 서서히 나오도록 작성 */
+
+            var ww = $(window).width();
+            var wh = $(window).height();
+
+            $('#wrap').css({
+                width:ww,
+                height:wh,
+                backgroundColor:'gold'
+            });
+
+            $('header').css({
+                width:'100%',
+                height:'100px',
+                backgroundColor:'lightyellow',
+
+                position:'fixed',
+
+                float:'left'
+            });
+
+            $('#in_header').css({
+                width:'1400px',
+                height:'40px',
+                margin:'0 auto',
+                padding:'30px 0',
+            });
+
+            $('#logo').css({
+                width:'150px',
+                height:'100%',
+                backgroundColor:'gold',
+
+                textAlign:'center',
+
+                float:'left'
+            });
+
+            $('#logo>a').css({
+                fontSize:'20px',
+                fontWeight:700,
+                lineHeight:'40px'
+            });
+
+            $('#menu_wrap').css({
+                width:'auto',
+                height:'100%',
+
+                float:'right'
+            });
+
+            $('#menu_wrap>li').css({
+                width:'auto',
+                height:'100%',
+                marginRight:'100px',
+
+                float:'left',
+
+                fontSize:'18px',
+                fontWeight:500,
+                lineHeight:'40px'
+            });
+
+            $('#menu_wrap>li:last-child').css({
+                marginRight:0
+            });
+
+            $('#section_1').css({
+                width:ww,
+                height:wh,
+
+                float:'left'
+            });
+
+            
+            $('#section_1>h1').css({
+                width: 400,
+                height: 50,
+
+                position:'absolute',
+                top:'50%',
+                left:200,
+
+                fontSize:36,
+                textAlign:'center',
+                opacity:0
+            });
+
+            $('#section_1>p').css({
+                width: 300,
+                height:20,
+
+                position:'absolute',
+                bottom:100,
+                left:'50%',
+                marginLeft: -150,
+
+                fontSize:12,
+                textAlign:'center',
+
+                opacity:0
+            });
+
+            $('#section_1>h1').animate({
+                width: 400,
+                height: 50,
+
+                position:'absolute',
+                top:'50%',
+                left:'50%',
+                marginLeft:'-200px',
+
+                fontSize:36,
+                textAlign:'center',
+                opacity:1
+            },1000);
+
+            $('#section_1>p').animate({
+                top:'58%',
+
+                opacity:1
+            }, 1000);
+
+        });
+        
+    </script>
+
+</head>
+<body>
+    
+    <div id="wrap">
+
+        <header>
+            <div id="in_header">
+
+                <div id="logo"><a href="#">logo</a></div>
+                <!--logo end -->
+
+                <ul id="menu_wrap">
+                    <li><a href="#">menu</a></li>
+                    <li><a href="#">menu</a></li>
+                    <li><a href="#">menu</a></li>
+                    <li><a href="#">menu</a></li>
+                </ul>
+                <!-- menu_wrap end -->
+
+            </div>
+            <!--in_header end -->
+        </header>
+
+        <section id="section_1">
+                
+            <h1>예제 타이틀입니다.</h1>
+
+            <p>예제 문단입니다. 옆에서 나오네요.</p>
+
+        </section>
+        <!-- section_1 end-->
+    </div>
+    <!-- wrap end -->
+
+</body>
+</html>

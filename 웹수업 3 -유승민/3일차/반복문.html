@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복문</title>
+    <script>
+
+        /* var a = 20;
+
+        document.write(a++, '<br/>');
+        document.write(a++, '<br/>');
+        document.write(a++, '<br/>');
+        document.write(a++, '<br/>');
+        document.write(a++, '<br/>');
+        document.write(a++, '<br/>'); */
+        
+        /* * 반복문
+        => 일정한 규칙의 반복값으로 조건이 만족할  때 까지
+        계속해서 같은 행동을 반복할 때 사용함
+        => 시작값 -> 초기화
+        => 끝값 -> 조건식
+        => 일정한 규칙 반복 -> 증감식
+
+        * for(초기화(시작); 조건식(끝값); 규칙(증감식) ){
+            조건식이 만족할 때까지 반복되는 실행식
+        } */
+
+        /* for(var a = 20; a <= 25; a++) {
+            document.write(a, '<br/>');
+        } */
+
+        /* * 문제
+        1부터 100까지 1씩 증가 반복시켜보기 */
+
+        /* for(var a = 1; a < 101; a++) {
+            document.write(a, '<br/>');
+        } */
+
+        /* for(var a = 100; a > 0; a--) {
+            document.write(a, '<br/>');
+        } */
+
+        /* * 문제
+        1~50까지의 숫자 중에 짝수 번째만 출력해주세요 */
+
+        /* for(var a = 2; a <= 50; a+=2) {
+            document.write(a, '<br/>');
+        } */
+
+        /* for(var a = 1; a <= 50; a++) {
+            if(a%2 == 0) {
+                document.write(a, '<br/>');
+            }
+        } */
+
+        /* * 문제
+        다음에서 반복되는 값을 찾은 후
+        반복식을 작성하시오
+        결과값
+        7단
+        7단X1=7
+        7단X2=14
+        7단X3=21
+        7단X4=28
+        7단X5=35
+        7단X6=42
+        7단X7=49
+        7단X8=56
+        7단X9=63 */
+
+        /* document.write('7단입니다<br/>');
+
+        for(var a = 1; a <= 9; a++) {
+            document.write(7, 'x', a, '=', 7*a, '<br/>');
+        } */
+
+        /* document.write('7단입니다<br/>');
+
+        for(var a = 1; a <= 9; a++) {
+            document.write(7, 'x', a, '=', 7*a, '<br/>');
+        } */
+
+        /* * 문제
+        입력받은 값에 해당하는 구구단을 출력
+        ?단입니다
+        해당 구구단 출력 */
+
+        /* var input = Number(prompt('숫자를 입력해주세요') );
+
+        document.write(input, '단입니다<br/>');
+
+        for(var a = 1; a <= 9; a++) {
+            document.write(input, 'x', a, '=', input*a, '<br/>');
+        } */
+
+        /* var input = Number(prompt('숫자를 입력해주세요') );
+
+        document.write(input, '단입니다<br/>');
+
+        for (var a = 1; a <= 9; a++) {
+            document.write(input, 'x', a, '=', input*a, '<br/>');
+        } */
+
+        /* * 중첩 for문
+        => 반복문 안에 반복문을 넣어줌
+
+        * 변수 a를 1~5까지 1씩 증가 출력
+        반복문 안에 들어가는 변수b를 6~8까지 1씩 증가 출력 */
+
+        /* for(var a = 1; a <= 5; a++) {
+            document.write('<h1>', a, '</h1>');
+
+            for(var b = 6; b <= 8; b++) {
+                document.write(b, '<br/>');
+            }
+        } */
+
+        /* for (var a = 1; a <= 5; a++) {
+            document.write('<h1>', a, '</h1>');
+
+            for(var b = 6; b <= 8; b++) {
+                document.write(b, '<br/>');
+            }
+        } */
+
+        /* * 문제
+        1단부터 9단까지 1~9까지 곱해지는 구구단 출력
+         결과
+        1단입니다
+        1단 구구단 출력
+        2단입니다
+        2단 구구단 출력
+        1~9단까지 출력
+        - 참고 작성되는 코드가 8줄이 넘지 않도록 하기 */
+
+        /* for(var a =1; a <= 9; a++) {
+            document.write('<h1>', a, '단입니다</h1>');
+            for(var b= 1; b <= 9; b++) {
+                document.write(a, 'x', b, '=', a*b, '<br/>');
+            }
+        } */
+
+        /* for (var a = 1; a <= 9; a++) {
+            document.write(a, '단입니다<br/>');
+
+            for(var b = 1; b <= 9; b++) {
+                document.write(a, 'x', b, '=', a*b, '<br/>');
+            }
+        } */
+
+        /* * 문제
+        입력받은 숫자에 해당하는 구구단 출력
+        => 입력받은 숫자가 홀수이면 1~10까지 홀수 번째 숫자만
+        곱하기
+        => 입력받은 숫자가 짝수이면 1~10까지 짝수 번째 숫자만 곱하기ex) 입력받은 숫자가 5이면
+        5단입니다
+        5x1=5
+        5x3=15
+        5x5=25
+        5x7=35
+        5x9=45 */
+
+        /* var num = Number( prompt('숫자를 입력해주세요') );
+
+        document.write(num, '단입니다<br/>');
+
+        if(num%2 == 0) {
+            for(var a = 2; a <= 10; a+=2) {
+                document.write(num, 'x', a, '=', num*a, '<br/>');
+            }
+        }else if(num%2 == 1) {
+            for(var a = 1; a <= 10; a+=2) {
+                document.write(num, 'x', a, '=', num*a, '<br/>');
+            }
+        }else{
+            document.write('숫자만 입력해주세요');
+        } */
+
+        var num = Number(prompt('숫자를 입력해주세요') );
+
+        document.write(num, '단입니다<br/>');
+
+        if(num%2 == 0) {
+            for(var a =2; a <= 10; a+=2) {
+                document.write(num, 'x', a, '=', num*a, '<br/>');
+            }
+        } else if(num%2 == 1) {
+            for(var a = 1; a <= 10; a+=2) {
+                document.write(num, 'x', a, '=', num*a, '<br/>');
+            }
+        } else {
+            document.write('숫자만 입력해주세요');
+        }
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

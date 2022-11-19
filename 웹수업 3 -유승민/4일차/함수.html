@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수</title>
+    <script>
+
+        /* * 함수
+        => 동일한 실행식을 반복할 때 그룹화하는 작업
+        필요시에 호출하여 사용하는 것을 의미
+        => 함수 사용방법
+        1. 함수형식 만들기
+        2. 함수 호출
+        => 함수 사용 => 함수명(); */
+
+        /* * 선언적 함수 형태
+        => 함수에 이름을 설정 사용
+        function 함수명(매개변수,매개변수){
+            반복되는 실행식
+        }
+        => 함수를 정의내린 후, 필요시에 호출한다.
+        - 함수 호출 형태 => 함수명();
+        매개변수가 있다면 매개변수에 관련된 값을 넣어서 호출 */
+
+        /* function a(){
+            document.write('선언적 함수 입니다');
+        }
+
+        a(); */
+
+        /* => 선언적 함수 , 정의보다 앞에 호출해도 표시됨
+        => 스크립트 만나는 순간 원래는 순차적으로 읽히지만,
+        선언적 함수는 스크립트를 불러오는 순간 제일 먼저 인식함.
+        => 우선순위 높고 호출은 작성되는 순서가 앞이든 뭐든 위치를 신경쓰지 않아도 된다
+        */
+
+        /* * 익명함수
+        => 함수의 이름이 없는 함수
+        => 변수에 저장 후 사용
+        var 변수명 = function(매개변수1,매개변수2){
+            함수 호출시 실행되는 실행문
+        }
+
+        호출해줄 때는
+        => 변수명(함수명)(); */
+
+        /* var a = function(){
+            document.write('익명함수 입니다');
+        }
+
+        a(); */
+
+        /* document.write(a);로 출력시
+        function(){document.write('익명함수 입니다');}
+        이 내용이 다 나오게 됨 */
+
+        /* => 정의보다 앞에 호출하면 표시 안됨
+        => 익명함수는 항상 정의 뒤쪽으로 호출해줘야 함
+        => 익명함수는 변수이기 때문에 변수 그대로 불러들이면 변수 안쪽 내용 그대로 출력이 됨
+        => 반드시 호출하여서 사용 */
+
+        /* * 매개변수
+        => 반복되는 작업인 함수 내에서 결과를 유추할 수 있도록 해주는 역할을 함
+        => 갯수 없는 경우, 하나인 경우, 쉼표로 구분해서 여러 개
+        => 해당 매개변수의 이름은 함수 내에서만 동일하게 지정하기
+        => 매개변수는 위치에 따라 대입됨 */
+
+        /* 문제
+        1. 두 개의 수를 입력받기
+        2. 입력받은 두 수에 해당하는 1~9까지 곱해지는 구구단 출력 */
+
+        /* var num_1 = Number( prompt('첫 번째 숫자를 입력해주세요') );
+        var num_2 = Number( prompt('두 번째 숫자를 입력해주세요') );
+
+        document.write(num_1, '단입니다<br/>'); */
+        /* for(var a = 1; a <= 9; a++) {
+            document.write(num_1, 'x', a, '=', num_1*a, '<br/>');
+        } */
+
+        /* gugu(num_1);
+
+        document.write(num_2, '단입니다<br/>'); */
+        /* for(var a = 1; a <= 9; a++) {
+            document.write(num_2, 'x', a, '=', num_2*a, '<br/>');
+        } */
+
+        /* gugu(num_2);
+
+        function gugu(i){
+            for(var a = 1; a <= 9; a++) {
+                document.write(i, 'x', a, '=', i*a, '<br/>');
+            }
+        } */
+
+        /* * 매개변수 묶는 방법
+        1. 중복되는 식을 함수로 묶어줌
+        2. 반복되는 식 중에 다른 부분을 매개변수로 담아줌
+        3. 매개변수를 사용하여 함수 호출 */
+
+
+
+        var num_1 = Number(prompt('첫 번째 숫자를 입력해주세요') );
+        var num_2 = Number(prompt('두 번째 숫자를 입력해주세요') );
+
+        document.write(num_1, '단 입니다<br/>');
+
+        /* for (var a = 1; a <= 9; a++) {
+            document.write(num_1, 'x', a, '=', num_1*a, '<br/>');
+        } */
+
+        gugu(num_1);
+
+
+        document.write(num_2, '단 입니다<br/>');
+
+        /* for (var a = 1; a <= 9; a++) {
+            document.write(num_2, 'x', a, '=', num_2*a, '<br/>');
+        } */
+
+        gugu(num_2);
+
+
+        function gugu(i) {
+            for (var a = 1; a <= 9; a++) {
+                document.write(i, 'x', a, '=', i*a, '<br/>');
+            }
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

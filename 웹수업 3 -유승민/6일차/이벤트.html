@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트</title>
+    <style>
+ 
+        * { margin:0; padding:0; }
+
+    </style>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+
+        $(document).ready(function(){
+
+            /* $('#box').css({
+                width: 300,
+                height: 300,
+                backgroundColor: 'teal'
+            }); */
+
+            /* * 이벤트
+            사용자가 윈도우 영역에서 마우스 또는 키보드로 어떠한 행동을 하면
+            반응해서 또 다른 결과를 만들어내는 명령 */
+
+            /* * 이벤트 명령
+            $(선택자).이벤트명(function(){
+                내용
+            }); */
+
+            /* $('#box').mouseenter(function(){
+                $('#box').css({
+                    backgroundColor:'coral'
+                });
+            }); */
+            //=> mouseenter 마우스가 요소영역에 들어갈 때
+
+            /* $('#box').mouseleave(function(){
+                $('#box').css({
+                    backgroundColor: 'gold'
+                });
+            }); */
+            //=> mouseleave 마우스가 요소영역에서 나올 때
+
+            /* $('#box').mousedown(function(){
+                $('#box').css({
+                    backgroundColor: 'pink'
+                });
+            }); */
+            //=> mousedown 마우스를 눌렀을 때 실행
+
+            /* $('#box').mouseup(function(){
+                $('#box').css({
+                    backgroundColor: 'lightblue'
+                });
+            }); */
+            //=> mouseup 마우스를 땠을 때 실행
+
+            /* $('#box').click(function(){
+                $('#box').css({
+                    backgroundColor: 'lightgreen'
+                });
+            }); */
+            //=> click 마우스를 눌렀다 뗐을 때
+
+            /* $('#box').dblclick(function(){
+                $('#box').css({
+                    backgroundColor: 'slateblue' 
+                });
+            }); */
+            //=> dblclick 마우스를 일정시간 안에 두 번 눌렀다 뗐을 때
+
+            /* $('#box').hover(function(){
+                $('#box').css({
+                    backgroundColor: 'lightyellow'
+                });   
+            }); */
+            //=> hover mouseenter + mouseleave
+
+            /* * 콜백함수
+            => function(){}
+            함수가 끝나고 다음 실행하고 싶은 또 다른 행동 또는 명령을 삽입할 때 사용하는 함수 */
+
+            /* * hover의 기본 틀
+            $('선택자').hover(function(){
+                내용
+            },function(){           <- 콜백함수
+                내용
+            }); */
+
+            /* $('#box').hover(function(){
+                $('#box').css({
+                    backgroundColor: 'darkgreen'
+                });
+            },function(){
+                $('#box').css({
+                    backgroundColor: 'salmon'
+                });
+            }); */
+
+            /* * 문제
+            box를 클릭하면 색상 변경 */
+
+            $('#box').css({
+                width:400,
+                height:400,
+                backgroundColor: 'lightblue'
+            }).click(function(){
+                $(this).css({
+                    backgroundColor: 'coral'
+                });
+            });
+
+            /* $('#box').click(function(){
+                $(this).css({
+                    backgroundColor: 'coral'
+                }); */
+
+            /* * this
+            첫 번째 선택자를 선택한 다음에 명령 들어갔고, 또 한 번 더 자기자신을 선택할 때 사용 */
+
+        });//end
+
+        
+
+    </script>
+</head>
+
+<body>
+
+    <div id="box"></div>
+
+</body>
+</html>

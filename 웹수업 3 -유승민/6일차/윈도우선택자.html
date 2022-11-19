@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>윈도우선택자</title>
+    <style>
+
+        * { margin:0; padding:0; }
+
+    </style>
+    <script src="js/jquery-3.6.0.min.js"></script>
+
+    <script>
+
+        $(document).ready(function(){
+
+            /* * window
+            => 브라우저에 대한 선택자
+            => window선택자를 사용할 땐 따옴표를 쓰지 않음 */
+
+            /* var ww = $(window).width();
+            var wh = $(window).height();
+
+            $('#box').css({
+                width: ww,
+                height: wh,
+                backgroundColor:'cornflowerblue'
+            }); */
+
+           /*  * 문제1
+            => 브라우저 가로값, 세로값 저장하기
+            => 브라우저 전체 파란색으로 채우기
+            => 파란박스 안에 노란박스     가로 :1200px, 높이 : 브라우저 높이값
+            => 노란박스 가운데 정렬 */
+
+            var ww = $(window).width();
+            var wh = $(window).height();
+
+            $('#out_box').css({
+                width: ww,
+                height: wh,
+                backgroundColor:'blue'
+            });
+
+            $('#in_box').css({
+                width:1200+'px',
+                height: wh,
+                backgroundColor:'gold',
+                margin:'0 auto'
+            });
+
+            
+
+            
+
+        });//end
+
+    </script>
+</head>
+
+<body>
+
+    <div id="out_box">
+        <div id="in_box"></div>
+    </div>
+    
+</body>
+</html>

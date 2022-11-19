@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시각효과</title>
+    <style>
+
+        * { margin:0; padding:0; }
+
+        .box {
+            width:400px;
+            height:600px;
+            border:10px solid black;
+            float:left;
+            margin-left:10px;
+        }
+
+        .in_box {
+            width:100%;
+            height:100%;
+            background-color:mediumaquamarine;
+            display:none;
+        }
+
+    </style>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script>
+
+        $(document).ready(function(){
+
+            /* * 기본 시각효과
+            => $(선택자).명령(시간);
+            => 나타날 때 css값으로 display:block 자동 설정
+            => 사라질 때 css값으로 display:none 자동 설정 */
+
+            $('#box_1').click(function(){
+                //$('#show_box').show(1000);
+                // => show(시간) 왼쪽 상단을 기준으로 크기가 커지면서 보이는 효과
+
+                //$('#show_box').hide(1000);
+                // => hide() 왼쪽 상단을 기준으로 크기가 작아지면서 사라지는 효과
+
+                $('#show_box').toggle(1000);
+                // => toggle() show+hide 혼자 둘 다 하는 효과
+            });
+
+            $('#box_2').click(function(){
+                //$('#slide_box').slideDown(1000);
+                // => slideDown() 슬라이드가 내려오면서 보이는 효과
+
+                //$('#slide_box').slideUp(1000);
+                // => slideDown() 슬라이드가 올라가면서 사라지는 효과
+
+                $('#slide_box').slideToggle(1000);
+                // => slideToggle() slideDown+slideUp 혼자 둘 다 하는 효과
+            });
+            
+
+            $('#box_3').click(function(){
+                //$('#fade_box').fadeIn(1000);
+                // => fadeIn() 투명도가 0~1로 변경되면서 나타나는 효과
+
+                //$('#fade_box').fadeOut(1000);
+                // => fadeOut() 투명도가 1~0으로 변경되면서 사라지는 효과
+
+                $('#fade_box').fadeToggle(1000);
+                // => fadeToggle() fadeIn+fadeOut 혼자 둘 다 하는 효과
+            });
+
+        });//end
+
+    </script>
+</head>
+<body>5
+    
+    <div class="box" id="box_1">
+        <div class="in_box" id="show_box">
+            <h1>왼쪽 상단에서 서서히 나타남</h1>
+        </div>
+    </div>
+
+    <div class="box" id="box_2">
+        <div class="in_box" id="slide_box">
+            <h1>위에서 서서히 나타남</h1>
+        </div>
+    </div>
+
+    <div class="box" id="box_3">
+        <div class="in_box" id="fade_box">
+            <h1>서서히 나타남</h1>
+        </div>
+    </div>
+
+</body>
+</html>

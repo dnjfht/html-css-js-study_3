@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>data값과 each</title>
+    <style>
+
+        * { margin:0; padding:0; }
+        ul { list-style:none; }
+
+        #box {
+            width:1000px;
+            height:200px;
+            border:10px solid black;
+            margin:0 auto;
+        }
+
+        #box>li {
+            width:200px;
+            height:100%;
+            float:left;
+            font:100px/200px '';
+            text-align:center;
+        }
+
+        /* li[data-index="0"] {
+            background-color:rgba(78,129,173);
+        } */
+
+        .active {
+            background-color:tan;
+        }
+
+    </style>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script>
+
+        $(document).ready(function(){
+
+            /* * 데이터 속성
+            => HTML5에서 새로나온 속성
+            => 데이터 속성은 'data-'로 시작해야 함
+            => 내가 원하는 값을 태그에게 저장하기 위한 목적
+            (내가 원하는 대로 데이터를 저장할 수 있음)
+            => 새로운 선택자 잡는 방법 */
+
+            /* * .each=> $('선택자').each(function(){});
+            => 자바스크립트의 for문과 유사
+            => 선택자에게 속성을 순서대로 지정해줌 */
+
+            $('#box>li').each(function(index){
+                $(this).attr('data-index',index);
+
+                /* * $('선택자').attr('data-XX',index);
+                => .attr()로 태그에 속성을 추가해줄 수 있음
+                => data-XX : 태그의 속성으로 index 순서값을 지정해줌
+                (태그의 속성으로 보여짐) */
+
+            }).click(function(){
+
+                var i = $(this).attr('data-index');
+                /* => .attr()로 요소의 속성값을 가져올 수 있음
+                => 내가 클릭한 요소의 순서값을 변수에 저장함 */
+
+                $('#box>li').eq(i).addClass('active');
+
+            });
+
+            
+
+
+        });//end
+    </script>
+</head>
+<body>
+    
+    <ul id="box">
+        <li data-index="0">1</li>
+        <li data-index="1">2</li>
+        <li data-index="2">3</li>
+        <li data-index="3">4</li>
+        <li data-index="4">5</li>
+    </ul>
+</body>
+</html>

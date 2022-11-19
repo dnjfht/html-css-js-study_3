@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>attr</title>
+    <style></style>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+
+        $(document).ready(function(){
+
+            /* * attr
+            => 태그의 속성을 추가할 때 사용
+            => 각 태그에 지정되는 속성만 사용
+            => 형태(css와 동일)
+            $(선택자).attr({
+                속성: 속성값,
+                .....
+            }); */
+
+            $('img:nth-child(1)').attr({
+                width:400,
+                height:400,
+                src: "img/b.jpg"
+            });
+
+            $('img:nth-child(2)').css({
+                width:400,
+                height:400
+            });
+
+
+            /* * removeAttr
+            $(선택자).removeAttr(삭제 속성명);
+            => 추가했거나 기존에 있던 속성을 삭제할 때 사용 */
+
+            $('img:nth-child(1)').removeAttr('width');
+
+            $('img:nth-child(2)').removeAttr('src');
+        });
+
+    </script>
+</head>
+<body>
+    
+    <img src="img/a.jpg" alt="">
+    <img src="img/b.jpg" alt="">
+</body>
+</html>

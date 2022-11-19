@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예제</title>
+    <style>
+
+        * { margin:0; padding:0; }
+        img { display:block; border:0; }
+            
+        ul { list-style:none; }
+
+        #wrap {
+            position:relative;
+
+            overflow:hidden;
+        }
+
+        #img_wrap {
+            position:absolute;
+            top:0;
+            left:0;
+        }
+
+        .btn {
+                background-color:pink;
+                
+                display:flex;
+                justify-content:center;
+                align-items:center;
+
+                position:absolute;
+                top:50%;
+        }
+
+        #left {
+            left:0;
+        }
+
+        #right { 
+            right:0;
+        }
+
+    </style>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script>
+
+        $(document).ready(function(){
+
+            /* * 문제
+            1. wrap 크기 ww x ww*0.5
+            2. btn 크기 ww*0.1 x ww*0.1
+            3. 이미지 3개
+            4. 오른쪽 버튼 클릭해서 1초마다 넘어가도록 작성
+            (if문 사용하지 않아도 됨 / resize만 사용하기) */
+
+            var ww = $(window).width();
+
+            function layout() {
+
+                $('#wrap').css({
+                    width: ww,
+                    height: ww * 0.5
+                });
+
+                wrap_w = $('#wrap').width();
+                wrap_h = $('#wrap').height();
+
+                $('#img_wrap').css({
+                    width: wrap_w * 3,
+                    height: wrap_h
+                });
+
+                $('#img_wrap>img').css({
+                    width: wrap_w,
+                    height: wrap_h,
+                    float: 'left'
+                });
+
+                $('.btn').css({
+                    width: ww * 0.1,
+                    height: ww * 0.1,
+                    marginTop: -(ww * 0.1)/2
+                });
+
+
+            }//layout end
+            layout();
+
+
+            //resize
+            $(window).resize(function(){
+                ww = $(window).width();
+                layout();
+            });
+
+
+            //img_wrap animate
+
+            var i = 0;
+
+            $('#right').click(function(){
+                i++;
+                if(i > 2) {
+                    i = 0;
+                }
+                $('#img_wrap').animate({
+                    left: -wrap_w * i
+                });
+            });
+
+            setInterval(function(){
+                $('#right').trigger('click');
+            },1000);
+
+        });//end
+
+    </script>
+</head>
+<body>
+    
+    <div id="wrap">
+
+        <div id="img_wrap">
+            <img src="img/a.jpg" alt="">
+            <img src="img/b.jpg" alt="">
+            <img src="img/c.jpg" alt="">
+        </div>
+
+        <h1 class="btn" id="left">&lt;</h1>
+        <h1 class="btn" id="right">&gt;</h1>
+
+    </div>
+
+</body>
+</html>

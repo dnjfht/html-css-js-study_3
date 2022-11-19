@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>addClass</title>
+    <style>
+
+        * { margin:0; padding:0; }
+
+        #box {
+            width:400px;
+            height: 400px;
+            /* transition-duration:1s; */
+            position:relative;
+        }
+
+        .remove {
+            border: 10px solid darkgreen;
+        }
+
+        .active {
+            background-color:pink;
+            /* margin-left:300px; */
+            /* transform:translateX(300px); */
+            left:300px;
+        }
+
+    </style>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script>
+
+        $(document).ready(function(){
+
+            /* * addClass
+            => css에서 지정된 클래스 스타일의 속성값을 추가할 때 사용
+            $('선택자').addClass('클래스 명'); */
+
+            /* $('#box').addClass('active'); */
+
+            /* * removeClass
+            => 추가된 클래스 또는 기존에 지정된 클래스 속성값을 제거할 때
+            $('선택자').removeClass('클래스 명'); */
+
+            /* $('#box').removeClass('remove'); */
+
+            /* *jQueryUI 플러그인 설치 후
+            addClass, removeClass에 시간값을 추가
+            애니메이션 작업을 할 수 있음
+
+            -animate 명령과 차이점
+            ==> animate 명령은 사용 가능한 속성값이 지정되어 있음
+            ==> 시간 차를 두고 색상변경 안됨
+
+            -addClass, removeclass를 활용한 애니메이션 작업
+            ==> 기존 css 스타일에 대부분 속성값을 활용
+            ==> 시간차를 두고 색상변경 가능
+            ==> 단 클래스 값으로 속성을 추가 제거하므로 우선순위 확인
+
+            $(선택자).addClass('클래스명',시간); */
+
+            /* $('#box').addClass('active', 1000); */
+
+            /* * 문제
+            박스 클릭했을 때 1초 동안 왼쪽에서 오른쪽으로 300px 이동하면서
+            색이 추가되는 클래스 넣기 */
+
+            $('#box').click(function(){
+                $('#box').addClass('active', 1000);
+            });
+
+            /* $('#box').click(function(){
+                $('#box').removeClass('remove', 1000);
+            }); */
+            
+
+        })//end
+
+    </script>
+</head>
+<body>
+    
+    <div id="box" class="remove"></div>
+
+</body>
+</html>

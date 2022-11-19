@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건반응형</title>
+    <style>
+
+        * { margin:0; padding:0; }
+
+    </style>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script>
+
+        $(document).ready(function(){
+
+            var ww = $(window).width();
+
+            function layout() {
+                
+                if(ww >= 1200) {
+
+                    $('#box').css({
+                        width:1200,
+                        height:500,
+                        backgroundColor:'salmon',
+                        margin:'0 auto'
+                    });
+
+                }else if(ww < 1200 && ww >= 960) {
+                    
+                    $('#box').css({
+                        width:960,
+                        height:400,
+                        backgroundColor:'teal',
+                        margin:'0 auto'
+                    });
+
+                }else if(ww < 960 && ww >= 700) {
+                    
+                    $('#box').css({
+                        width:ww * 0.5,
+                        height:400,
+                        backgroundColor:'gold'
+                    });
+
+                }else if(ww < 700) {
+
+                    $('#box').css({
+                        width:ww,
+                        height:ww*0.5,
+                        backgroundColor:'slateblue'
+                    });
+
+                }
+
+                /* 960~700
+                box: ww*0.5, 배경색 변경
+                700~
+                box: ww / ww*0.5 , 배경색 변경 */
+
+
+            }//layout end
+            layout();
+
+
+            $(window).resize(function(){
+
+                ww = $(window).width();
+                layout();
+                
+            });
+
+
+
+        });//end
+
+    </script>
+</head>
+
+<body>
+
+    <div id="box"></div>
+
+</body>
+</html>

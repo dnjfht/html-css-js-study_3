@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수(복습)</title>
+    <script>
+
+        //선언함수
+
+        /* function a(){
+            document.write('선언적 함수 입니다');
+        }
+
+        a(); */
+
+        //익명함수
+
+        /* var a = function(){
+            document.write('익명함수 입니다');
+        }
+
+        a(); */
+
+        /* 문제
+        1. 두 개의 수를 입력받기
+        2. 입력받은 두 수에 해당하는 1~9까지 곱해지는 구구단 출력 */
+
+        var num_1 = Number( prompt('첫 번째 숫자를 입력하세요') );
+        var num_2 = Number( prompt('두 번째 숫자를 입력하세요') );
+
+        document.write(num_1, '단입니다<br/>');
+        /* for(var a = 1; a <=9; a++) {
+            document.write(num_1, 'x', a, '=', num_1*a, '<br/>');
+        } */
+
+        gugu(num_1)
+
+        document.write(num_2, '단입니다<br/>');
+        /* for(var a = 1; a <=9; a++) {
+            document.write(num_2, 'x', a, '=', num_2*a, '<br/>');
+        } */
+
+        gugu(num_2)
+
+        function gugu(i) {
+            for(var a = 1; a <= 9; a++) {
+                document.write(i, 'x', a, '=', i*a, '<br/>');
+            }
+        }
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
